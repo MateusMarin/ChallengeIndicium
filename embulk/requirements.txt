@@ -1,0 +1,4 @@
+embulk-input-postgresql
+embulk-output-postgresql
+embulk-formatter-jsonl
+embulk-parser-jsonl

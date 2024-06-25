@@ -1,0 +1,24 @@
+{
+  "in": {
+    "type": "postgresql",
+    "host": "db",
+    "database": "northwind",
+    "port": 5432,
+    "user": "northwind_user",
+    "password": "thewindisblowing",
+    "select": "*",
+    "table": "orders"
+  },
+  "out": {
+    "type": "file",
+    "formatter": {
+        "type": "jsonl",
+        "encoding": "UTF-8"
+    },
+    "encoder": {
+        "type": "gzip"
+    },
+    "path_prefix": "/shared/orders_",
+    "file_ext": "json.gz"
+  }
+}

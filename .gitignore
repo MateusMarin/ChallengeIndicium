@@ -1,0 +1,6 @@
+venv
+.meltano
+.env
+logs
+dbdata
+__pycache__

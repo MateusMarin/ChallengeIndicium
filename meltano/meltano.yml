@@ -1,0 +1,23 @@
+version: 1
+
+project_id: indiciumchallenge
+
+plugins:
+  extractors:
+    - name: tap-csv
+      variant: meltanolabs
+      pip_url: git+https://github.com/MeltanoLabs/tap-csv.git
+      config:
+        files:
+          - entity: order_details
+            path: /data/order_details.csv
+            keys:
+              - order_id
+            delimiter: ','
+
+  loaders:
+    - name: target-jsonl
+      variant: andyh1203
+      pip_url: target-jsonl
+      config:
+        path: /output

@@ -1,0 +1,18 @@
+in:
+  type: file
+  parser:
+    type: jsonl
+    encoding: UTF-8
+  decoders:
+    - type: gzip
+  path_prefix: /shared/orders_
+  file_ext: json.gz
+out:
+  type: postgresql
+  host: destination_database
+  database: indicium
+  port: 5432
+  user: admin
+  password: password
+  table: orders
+  mode: insert_direct
